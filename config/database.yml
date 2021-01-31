@@ -23,6 +23,7 @@ default: &default
 
 development:
   <<: *default
+  adapter: postgis
   database: hydrants_tracker_development
 
   # The specified database role being used to connect to postgres.
@@ -57,6 +58,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  adapter: postgis
   database: hydrants_tracker_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
@@ -80,7 +82,4 @@ test:
 # for a full overview on how database connection configuration can be specified.
 #
 production:
-  <<: *default
-  database: hydrants_tracker_production
-  username: hydrants_tracker
-  password: <%= ENV['HYDRANTS_TRACKER_DATABASE_PASSWORD'] %>
+  url: <%= ENV.fetch("DATABASE_URL", "").gsub(/postgres/, 'postgis') %>
