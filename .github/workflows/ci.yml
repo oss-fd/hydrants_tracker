@@ -39,7 +39,7 @@ jobs:
       - name: install node
         uses: actions/setup-node@v1
         with:
-          node-version: 10.13.0
+          node-version: 10.17.0
 
       - name: set yarn cache location
         id: yarn-cache
