@@ -116,6 +116,9 @@ GEM
       racc (~> 1.4)
     nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
+    permanent_records (5.0.0.1)
+      activerecord (>= 5.0.0)
+      activesupport (>= 5.0.0)
     pg (1.2.3)
     pry (0.13.1)
       coderay (~> 1.1)
@@ -253,6 +256,7 @@ DEPENDENCIES
   factory_bot_rails
   jbuilder (~> 2.7)
   listen (~> 3.3)
+  permanent_records
   pg (~> 1.1)
   pry-byebug
   pry-rails
