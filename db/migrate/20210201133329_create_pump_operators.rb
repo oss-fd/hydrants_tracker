@@ -10,5 +10,6 @@ class CreatePumpOperators < ActiveRecord::Migration[6.1]
     end
 
     add_index :pump_operators, :guid, unique: true
+    add_index :pump_operators, :deleted_at
   end
 end

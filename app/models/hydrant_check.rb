@@ -1,4 +1,7 @@
 class HydrantCheck < ApplicationRecord
+  include Discard::Model
+  self.discard_column = :deleted_at
+
   enum line_used: {
     "1 1/2": 1,
     "1 3/4": 0, # 1 3/4" is the most common hand line

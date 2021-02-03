@@ -8,5 +8,6 @@ class CreateApparatus < ActiveRecord::Migration[6.1]
     end
 
     add_index :apparatus, :guid, unique: true
+    add_index :apparatus, :deleted_at
   end
 end

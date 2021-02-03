@@ -1,9 +1,13 @@
 class Hydrant < ApplicationRecord
+  include Discard::Model
+  self.discard_column = :deleted_at
+
   enum hydrant_type: {
     wet: 0,
     dry: 1,
     tank: 2,
-    unknown: 3
+    muni: 3,
+    unknown: 4
   }
 
   has_many :hydrant_checks, dependent: :destroy

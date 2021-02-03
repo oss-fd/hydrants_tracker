@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_02_01_133329) do
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_apparatus_on_deleted_at"
     t.index ["guid"], name: "index_apparatus_on_guid", unique: true
   end
 
@@ -41,9 +42,11 @@ ActiveRecord::Schema.define(version: 2021_02_01_133329) do
     t.integer "minutes_pumped"
     t.boolean "in_service", default: true, null: false
     t.text "notes"
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["apparatus_id"], name: "index_hydrant_checks_on_apparatus_id"
+    t.index ["deleted_at"], name: "index_hydrant_checks_on_deleted_at"
     t.index ["guid"], name: "index_hydrant_checks_on_guid", unique: true
     t.index ["hydrant_id"], name: "index_hydrant_checks_on_hydrant_id"
     t.index ["pump_operator_id"], name: "index_hydrant_checks_on_pump_operator_id"
@@ -60,8 +63,10 @@ ActiveRecord::Schema.define(version: 2021_02_01_133329) do
     t.datetime "needs_follow_up"
     t.text "last_check_note"
     t.string "tank_capacity"
+    t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_hydrants_on_deleted_at"
     t.index ["guid"], name: "index_hydrants_on_guid", unique: true
   end
 
@@ -73,6 +78,7 @@ ActiveRecord::Schema.define(version: 2021_02_01_133329) do
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["deleted_at"], name: "index_pump_operators_on_deleted_at"
     t.index ["guid"], name: "index_pump_operators_on_guid", unique: true
   end
 

@@ -11,9 +11,11 @@ class CreateHydrants < ActiveRecord::Migration[6.1]
       t.datetime :needs_follow_up
       t.text :last_check_note
       t.string :tank_capacity
+      t.datetime :deleted_at
       t.timestamps
     end
 
     add_index :hydrants, :guid, unique: true
+    add_index :hydrants, :deleted_at
   end
 end
