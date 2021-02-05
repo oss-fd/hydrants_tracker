@@ -35,7 +35,7 @@ module HydrantsTracker
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.middleware.insert_before 0, "Rack::Cors" do
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
         origins /boxfordfire.org|thehydrantapp.com/
         resource '*', :headers => :any, :methods => [:get, :post, :options]
