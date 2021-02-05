@@ -1,4 +1,5 @@
 class Hydrant < ApplicationRecord
+  include HydrantsDisplay
   include Discard::Model
   self.discard_column = :deleted_at
 
