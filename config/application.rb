@@ -37,7 +37,7 @@ module HydrantsTracker
 
     config.middleware.insert_before 0, "Rack::Cors" do
       allow do
-        origins /boxfordfire.org|thehydrantapp.com/i
+        origins /boxfordfire.org|thehydrantapp.com/
         resource '*', :headers => :any, :methods => [:get, :post, :options]
       end
     end
