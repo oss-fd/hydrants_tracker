@@ -1,0 +1,1 @@
+json.(hydrant_check, :id, :hydrant_id, :vegetation_overgrown, :tank_locked, :lock_operable, :prime_pulled, :circulated, :line_used, :minutes_pumped, :in_service, :notes, :approved_at, :created_at, :updated_at, :pump_operator_id, :apparatus_id, :needs_follow_up)

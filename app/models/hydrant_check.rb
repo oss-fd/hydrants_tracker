@@ -22,4 +22,14 @@ class HydrantCheck < ApplicationRecord
   validates :notes, presence: true, unless: -> { in_service && !needs_follow_up }
   validates :pump_operator_id, presence: true
   validates :apparatus_id, presence: true
+
+  def approve!
+    touch(:approved_at)
+
+    if needs_follow_up
+      hydrant.update(last_check_note: notes, needs_follow_up: 1.week.from_now, in_service: in_service) # default to 1 week
+    else
+      hydrant.update(last_check_note: notes, last_tested_at: created_at, in_service: in_service, needs_follow_up: nil)
+    end
+  end
 end
