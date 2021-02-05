@@ -15,6 +15,7 @@ class CreateHydrantChecks < ActiveRecord::Migration[6.1]
       t.integer :minutes_pumped
       t.boolean :in_service, default: true, null: false
       t.text :notes
+      t.datetime :approved_at
       t.datetime :deleted_at
       t.timestamps
     end

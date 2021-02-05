@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2021_02_01_133329) do
     t.integer "minutes_pumped"
     t.boolean "in_service", default: true, null: false
     t.text "notes"
+    t.datetime "approved_at"
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
